@@ -14,10 +14,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -25,6 +28,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -45,7 +49,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.victor.coolcamara.ui.theme.CoolCamaraTheme
-
 
 
 class MainActivity : ComponentActivity() {
@@ -162,9 +165,6 @@ fun AlarmCard(){
 }
 
 
-
-
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppTopBar(toolBarTitle:String) {
@@ -197,6 +197,28 @@ fun MainPreview() {
     }
 }
 
+@Composable
+fun AppPaginator() {
+    Row {
+        Column() {
+            IconButton(onClick = {  }) {
+                Icon(imageVector = Icons.Filled.KeyboardArrowLeft, contentDescription = "Left")
+            }
+        }
+
+        Column() {
+            LinearProgressIndicator(progress = 0.7f)
+        }
+
+        Column() {
+            IconButton(onClick = {  }) {
+                Icon(imageVector = Icons.Filled.KeyboardArrowRight, contentDescription = "Right     ")
+            }
+        }
+    }
+}
+
+
 
 @Composable
 fun Main() {
@@ -205,18 +227,23 @@ fun Main() {
             AppTopBar(toolBarTitle = "Alarmas")
         },
         content =
-        { padding ->
-            Surface(
-                modifier = Modifier.padding(padding),
-            ) {
-                Column(Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally) {
-                    AlarmCard()
+            { padding ->
+                Surface(
+                    modifier = Modifier.padding(padding),
+                ) {
+                    Column(Modifier.fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally) {
+                        Row {
+                            AlarmCard()
+                        }
+
+                        Spacer(modifier = Modifier.size(width = 0.dp, height = 20.dp))
+
+                        Row{
+                            AppPaginator()
+                        }
+                    }
                 }
             }
-        }
     )
-
-
-
 }
