@@ -1,10 +1,10 @@
 package com.victor.coolcamara
 
-
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -24,8 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.victor.coolcamara.ui.theme.CoolCamaraTheme
 
-
-class DeleteAlarm : ComponentActivity() {
+class ConfirmationDelete : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -35,19 +34,18 @@ class DeleteAlarm : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    DeleteMain()
+                    MainConfirmationDelete()
                 }
             }
         }
     }
 }
 
-
 @Composable
-fun DeleteMain() {
+fun MainConfirmationDelete() {
     Scaffold(
         topBar = {
-            AppTopBar(toolBarTitle = "Alarma 1")
+            AppTopBar(toolBarTitle = "Confirmación")
         },
         content =
         { padding ->
@@ -55,22 +53,37 @@ fun DeleteMain() {
                 modifier = Modifier.padding(padding),
             ) {
                 Column(Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
                     Row {
-                        AlarmCard()
+                        Text(text = "¿Estás seguro de eliminar Alarma 1?")
                     }
 
                     Spacer(modifier = Modifier.size(width = 0.dp, height = 20.dp))
 
                     Row{
-                        Column (horizontalAlignment = Alignment.CenterHorizontally){
+                        Column (horizontalAlignment = Alignment.Start){
                             val context = LocalContext.current
 
                             Button(
                                 onClick = {
-                                    context.startActivity(Intent(context, ConfirmationDelete::class.java))
+                                    context.startActivity(Intent(context, DeleteAlarm::class.java))
                                 },
-                                modifier =  Modifier.size(width = 220.dp,height = 45.dp)
+                                modifier =  Modifier.size(width = 120.dp,height = 45.dp)
+                            ) {
+                                Text(text = "Cancelar")
+                            }
+                        }
+
+                        Column (horizontalAlignment = Alignment.End){
+                            val context = LocalContext.current
+
+                            Button(
+                                onClick = {
+                                    context.startActivity(Intent(context, MainActivity::class.java))
+                                },
+                                modifier =  Modifier.size(width = 120.dp,height = 45.dp)
                             ) {
                                 Text(text = "Eliminar")
                             }
@@ -85,8 +98,8 @@ fun DeleteMain() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     CoolCamaraTheme {
-        DeleteMain()
+        MainConfirmationDelete()
     }
 }

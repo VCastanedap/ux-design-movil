@@ -17,4 +17,5 @@
     <string name="puzzles">Puzzles</string>
     <string name="alarmasonado">Alarm Sonando</string>
     <string name="sonidos">Sonidos</string>
+    <string name="title_activity_confirmation_delete">ConfirmationDelete</string>
 </resources>
