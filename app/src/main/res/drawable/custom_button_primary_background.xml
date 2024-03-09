@@ -2,11 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
-            <corners android:radius="100dp" /> <!-- ajusta el radio según desees -->
+            <corners android:radius="10dp" /> <!-- ajusta el radio según desees -->
             <stroke
                 android:width="2dp"
                 android:color="@color/botones" /> <!-- ajusta el color del borde -->
-            <solid android:color="@color/fondo" /> <!-- ajusta el color del fondo -->
+            <solid android:color="@color/botones" /> <!-- ajusta el color del fondo -->
         </shape>
     </item>
     <item android:state_enabled="false">

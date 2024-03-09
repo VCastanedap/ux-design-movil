@@ -12,4 +12,9 @@
     <string name="descripcionCard">Alarma: No olvides tomar  tus medicamentos </string>
     <string name="posponer">Posponer</string>
     <string name="cancelar">Cancelar</string>
+    <string name="listaAlarma">Lista Alarmas</string>
+    <string name="nuevaAlarma">Nueva Alarma</string>
+    <string name="puzzles">Puzzles</string>
+    <string name="alarmasonado">Alarm Sonando</string>
+    <string name="sonidos">Sonidos</string>
 </resources>

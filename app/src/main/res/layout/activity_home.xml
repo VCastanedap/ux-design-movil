@@ -139,20 +139,16 @@
 
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         tools:ignore="MissingConstraints">
-
-
 
 
         <!-- Auto layout, variables, and unit scale are not yet supported -->
@@ -162,7 +158,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="182dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
@@ -176,25 +172,24 @@
 
 
 
-
-
             <!-- Auto layout, variables, and unit scale are not yet supported -->
 
             <RelativeLayout
-                android:id="@+id/minicard1"
+                android:id="@+id/btn1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/botones"
+                android:background="@drawable/custom_button_primary_background"
                 android:gravity="center_horizontal"
+
 
                 >
 
                 <RelativeLayout
-                    android:id="@+id/minicardVinilos"
+                    android:id="@+id/icon_cont1"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:layout_alignParentStart="true"
@@ -203,12 +198,11 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/botones"
                     android:gravity="center">
 
                     <!-- Auto layout, variables, and unit scale are not yet supported -->
                     <View
-                        android:id="@+id/vector"
+                        android:id="@+id/icono1"
                         android:layout_width="5dp"
                         android:layout_height="5dp"
                         android:layout_alignParentStart="true"
@@ -219,25 +213,26 @@
                         android:layout_marginTop="7dp"
                         android:layout_marginRight="12dp"
                         android:layout_marginBottom="2dp"
-                        android:background="@drawable/flower"
+                        android:background="@drawable/icon_list"
                         android:gravity="center" />
 
 
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/txtVinilos"
+                    android:id="@+id/txt_btn1"
                     android:layout_width="56dp"
                     android:layout_height="16dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
-                    android:background="@color/botones"
-
                     android:gravity="center_horizontal"
-                    android:text="@string/posponer"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                    android:text="@string/listaAlarma"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -256,23 +251,69 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <RelativeLayout
+                android:id="@+id/btn2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_button_primary_background"
+                android:gravity="center_horizontal"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/icon_cont2"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/botones"
+                    android:gravity="center">
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <View
+                        android:id="@+id/icon2"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/icon_newalarm"
+                        android:gravity="center" />
 
 
+                </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/txt_btn2"
+                    android:layout_width="56dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/nuevaAlarma"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </RelativeLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -289,13 +330,269 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout><![CDATA[
+            <RelativeLayout
+                android:id="@+id/btn3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_button_primary_background"
+                android:gravity="center_horizontal"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/icon_cont3"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/botones"
+                    android:gravity="center">
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <View
+                        android:id="@+id/icon3"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/icon_puzzles"
+                        android:gravity="center" />
 
 
-        out>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_btn3"
+                    android:layout_width="56dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/puzzles"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-1dp"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
-    ]]>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btn4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_button_primary_background"
+                android:gravity="center_horizontal"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/icon_cont4"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/botones"
+                    android:gravity="center">
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <View
+                        android:id="@+id/icon4"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/icon_alarmsonido"
+                        android:gravity="center" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_btn4"
+                    android:layout_width="56dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/alarmasonado"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_button_primary_background"
+                android:gravity="center_horizontal"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/icon_cont5"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/botones"
+                    android:gravity="center">
+
+                    <!-- Auto layout, variables, and unit scale are not yet supported -->
+                    <View
+                        android:id="@+id/icon5"
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/icon_sonidos"
+                        android:gravity="center" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_btn5"
+                    android:layout_width="56dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sonidos"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
     </RelativeLayout>
 
 
