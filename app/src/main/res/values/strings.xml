@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">CoolCamara</string>
-    <string name="title_activity_delete_alarm">DeleteAlarm</string>
+    <string name="content_description_media" />
+    <string name="title">titulo</string>
+    <string name="secondary_text" />
+    <string name="supporting_text" />
+    <string name="action_1" />
+    <string name="action_2" />
+    <string name="titleAlarmaCard">Proxima Alarma</string>
+    <string name="horaAlarma">9:45 AM</string>
+    <string name="horaFechaCard">02/03/2024</string>
+    <string name="descripcionCard">Alarma: No olvides tomar  tus medicamentos </string>
+    <string name="posponer">Posponer</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
