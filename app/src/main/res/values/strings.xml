@@ -12,4 +12,5 @@
     <string name="descripcionCard">Alarma: No olvides tomar  tus medicamentos </string>
     <string name="posponer">Posponer</string>
     <string name="cancelar">Cancelar</string>
+    <string name="title_activity_confirmation_delete">ConfirmationDelete</string>
 </resources>

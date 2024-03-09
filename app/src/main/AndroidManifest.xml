@@ -13,6 +13,11 @@
         android:theme="@style/Theme.CoolCamara"
         tools:targetApi="31">
         <activity
+            android:name=".ConfirmationDelete"
+            android:exported="false"
+            android:label="@string/title_activity_confirmation_delete"
+            android:theme="@style/Theme.CoolCamara" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="CoolCameraMainActivity"
@@ -23,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DeleteAlarm"
             android:exported="true"
@@ -35,7 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".home"
             android:exported="true"
