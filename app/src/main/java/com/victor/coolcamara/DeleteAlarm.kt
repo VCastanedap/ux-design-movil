@@ -1,6 +1,7 @@
 package com.victor.coolcamara
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.victor.coolcamara.ui.theme.CoolCamaraTheme
@@ -62,8 +64,12 @@ fun DeleteMain() {
 
                     Row{
                         Column (horizontalAlignment = Alignment.CenterHorizontally){
+                            val context = LocalContext.current
+
                             Button(
-                                onClick = { /*TODO*/ },
+                                onClick = {
+                                    context.startActivity(Intent(context, ConfirmationDelete::class.java))
+                                },
                                 modifier =  Modifier.size(width = 220.dp,height = 45.dp)
                             ) {
                                 Text(text = "Eliminar")
