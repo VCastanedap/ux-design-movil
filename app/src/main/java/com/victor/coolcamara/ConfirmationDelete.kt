@@ -29,7 +29,6 @@ class ConfirmationDelete : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CoolCamaraTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -43,9 +42,14 @@ class ConfirmationDelete : ComponentActivity() {
 
 @Composable
 fun MainConfirmationDelete() {
+    val onBackPressed: () -> Unit = {
+        // Lógica para manejar la acción de retroceso aquí
+        // Puede ser cerrar la actividad actual o cualquier otra acción que desees
+    }
     Scaffold(
         topBar = {
-            AppTopBar(toolBarTitle = "Confirmación")
+            AppTopBar(toolBarTitle = "Confirmación", onBackPressed = onBackPressed)
+
         },
         content =
         { padding ->
@@ -81,7 +85,7 @@ fun MainConfirmationDelete() {
 
                             Button(
                                 onClick = {
-                                    context.startActivity(Intent(context, MainActivity::class.java))
+                                    context.startActivity(Intent(context, home::class.java))
                                 },
                                 modifier =  Modifier.size(width = 120.dp,height = 45.dp)
                             ) {

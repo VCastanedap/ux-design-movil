@@ -18,4 +18,20 @@
     <string name="alarmasonado">Alarm Sonando</string>
     <string name="sonidos">Sonidos</string>
     <string name="title_activity_confirmation_delete">ConfirmationDelete</string>
+    <string name="gameclock">GameClock</string>
+    <string name="puntaje">2048</string>
+    <string name="labelfecha">Fecha</string>
+    <string name="crear">Crear</string>
+    <string name="perzonalizar">Perzonalizar</string>
+    <string name="labelhora">Hora</string>
+    <string name="repetición">Repetición</string>
+    <string name="puntuacion">Puntuación</string>
+    <string name="ranking">5/25</string>
+    <string name="puntaje1">Puntaje</string>
+    <string name="ranking1">Ranking</string>
+    <string name="matematicas">Matematicas</string>
+    <string name="juego1">Cuanto es 10 x 10:</string>
+    <string name="labelRespuesta">"Tu respuesta "</string>
+    <string name="juego2">Cuanto es 5 x 5:</string>
+    <string name="enviar">Enviar</string>
 </resources>

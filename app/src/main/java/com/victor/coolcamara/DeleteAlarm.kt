@@ -45,9 +45,15 @@ class DeleteAlarm : ComponentActivity() {
 
 @Composable
 fun DeleteMain() {
+
+    val onBackPressed: () -> Unit = {
+        // Lógica para manejar la acción de retroceso aquí
+        // Puede ser cerrar la actividad actual o cualquier otra acción que desees
+    }
     Scaffold(
         topBar = {
-            AppTopBar(toolBarTitle = "Alarma 1")
+            AppTopBar(toolBarTitle = "Confirmación", onBackPressed = onBackPressed)
+
         },
         content =
         { padding ->

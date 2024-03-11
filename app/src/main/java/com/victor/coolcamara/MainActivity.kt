@@ -3,6 +3,8 @@ package com.victor.coolcamara
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -34,6 +36,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -178,25 +181,38 @@ fun AlarmCard(){
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar(toolBarTitle:String) {
+fun AppTopBar(toolBarTitle: String, onBackPressed: () -> Unit) {
+    val dispatcherOwner = LocalOnBackPressedDispatcherOwner.current
+    val dispatcher = dispatcherOwner!!.onBackPressedDispatcher
+
+    val callback = remember {
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                onBackPressed()
+            }
+        }
+    }
+
+    DisposableEffect(key1 = dispatcher) {
+        dispatcher.addCallback(callback)
+        onDispose {
+            callback.remove()
+        }
+    }
+
     TopAppBar(
         navigationIcon = {
-            IconButton(onClick = { /* do something */ }) {
+            IconButton(onClick = { onBackPressed() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = "Localized description"
                 )
             }
         },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.White,
-            titleContentColor = Color.Black,
-        ),
         title = {
             Text(text = toolBarTitle)
         }
     )
-
 }
 
 
@@ -207,7 +223,6 @@ fun MainPreview() {
         Main()
     }
 }
-
 @Composable
 fun AppPaginator() {
     Row {
@@ -229,31 +244,40 @@ fun AppPaginator() {
     }
 }
 
-
 @Composable
 fun Main() {
+    val onBackPressed: () -> Unit = {
+        // Manejar el evento de retroceso aquí
+        // Por ejemplo, puedes cerrar la actividad actual
+        onBackPressed()
+    }
+
     Scaffold(
         topBar = {
-            AppTopBar(toolBarTitle = "Alarmas")
+            AppTopBar(toolBarTitle = "Alarmas", onBackPressed = onBackPressed)
         },
         content =
-            { padding ->
-                Surface(
-                    modifier = Modifier.padding(padding),
-                ) {
-                    Column(Modifier.fillMaxSize(),
-                        horizontalAlignment = Alignment.CenterHorizontally) {
-                        Row {
-                            AlarmCard()
-                        }
+        { padding ->
+            Surface(
+                modifier = Modifier.padding(padding),
+            ) {
+                Column(Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    Row {
+                        AlarmCard()
+                    }
 
-                        Spacer(modifier = Modifier.size(width = 0.dp, height = 20.dp))
+                    Spacer(modifier = Modifier.size(width = 0.dp, height = 20.dp))
 
-                        Row{
-                            AppPaginator()
-                        }
+                    Row{
+                        AppPaginator()
                     }
                 }
             }
+        }
     )
+}
+
+fun onBackPressed() {
+    TODO("Not yet implemented")
 }
